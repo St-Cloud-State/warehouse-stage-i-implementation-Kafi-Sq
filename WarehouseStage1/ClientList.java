@@ -4,6 +4,14 @@ import java.io.*;
 public class ClientList {
     private LinkedList<Client> clients = new LinkedList<Client>();
 
+    public static ClientList instance() {
+    if (clients == null) {
+      return (clients = new ClientList());
+    } else {
+      return clients;
+    }
+  }
+
     public Client search(String ClientID){
         Client target = null;
 
